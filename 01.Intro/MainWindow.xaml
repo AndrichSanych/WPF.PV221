@@ -6,7 +6,89 @@
         xmlns:local="clr-namespace:_01.Intro"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Window.Resources>
+        <Style x:Key="ButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Background" Value="Brown"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="BorderThickness" Value="1"/>
+        </Style>
+    </Window.Resources>
+    <DockPanel>
+        <DockPanel LastChildFill="False" DockPanel.Dock="Top"> 
+            <Button Margin="5">  Button 1 </Button>
+            <Button Margin="5"> Button 2 </Button>
+            <Button DockPanel.Dock="Right" Margin="5"> Button 4 </Button>
+            <Button DockPanel.Dock="Right" Margin="5"> Button 3 </Button> 
+        </DockPanel>
+        <DockPanel LastChildFill="False" DockPanel.Dock="Bottom">
+            <Button Margin="5" Content="Button 8" />
+            <Button Margin="5" Content="Button 9" />
+            <Button Margin="5" DockPanel.Dock="Right" Content="Button 11" />
+            <Button Margin="5" DockPanel.Dock="Right" Content="Button 10" />
+            
+        </DockPanel>
+          
+        <Label Content="Rivne News" FontSize="30" DockPanel.Dock="Top" HorizontalAlignment="Center">  </Label>
+        
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel>
+                <Button Content="Button 5" Height="90" Margin="5"></Button>
+                <Button Content="Button 6" Height="90" Margin="5"></Button>
+                <Button Content="Button 7" Height="90" Margin="5"></Button>
+            </StackPanel>
+            <Grid Grid.Column="1" Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Button Content="Button 8" Style="{StaticResource ButtonStyle}" Grid.ColumnSpan="2" Grid.RowSpan="3" ></Button>
+                <Button Content="Button 9" Style="{StaticResource ButtonStyle}" Grid.Column="2" Grid.ColumnSpan="2" Grid.RowSpan="3"></Button>
+                <Button Content="Button 10" Grid.Column="0" Grid.Row="3" Style="{StaticResource ButtonStyle}" />
+                <Button Content="Button 11" Grid.Column="1" Grid.Row="3" Style="{StaticResource ButtonStyle}" />
+                <Button Content="Button 12" Grid.Column="2" Grid.Row="3" Style="{StaticResource ButtonStyle}" />
+                <Button Content="Button 13" Grid.Column="3" Grid.Row="3" Style="{StaticResource ButtonStyle}" />
+                <Button Content="Button 14" Grid.Column="0" Grid.Row="4" Style="{StaticResource ButtonStyle}" />
+                <Button Content="Button 15" Grid.Column="1" Grid.Row="4" Style="{StaticResource ButtonStyle}" />
+                <Button Content="Button 16" Grid.Column="2" Grid.Row="4" Style="{StaticResource ButtonStyle}" />
+                <Button Content="Button 17" Grid.Column="3" Grid.Row="4" Style="{StaticResource ButtonStyle}" />
+                <WrapPanel Grid.Row="5" Grid.ColumnSpan="4" Grid.RowSpan="2" Margin="5">
+                    <Button Content="Button 21" Height="30" Width="100" Margin="5"> </Button>
+                    <Button Content="Button 21" Height="30" Width="100" Margin="5"> </Button>
+                    <Button Content="Button 21" Height="30" Width="100" Margin="5"> </Button>
+                    <Button Content="Button 21" Height="30" Width="130" Margin="5"> </Button>
+                    <Button Content="Button 21" Height="30" Width="180" Margin="5"> </Button>
+                    
 
-    </Grid>
+                </WrapPanel>
+            </Grid>
+            <StackPanel Grid.Column ="3" Margin="5">
+                <Button Content="Button 18" Margin="5" Height="70"/>
+                <Button Content="Button 19" Margin="5" Height="30"/>
+                <Button Content="Button 20" Margin="5" Height="90"/>
+            </StackPanel>
+               
+                
+
+
+
+
+        </Grid>
+    </DockPanel>
 </Window>
