@@ -41,15 +41,23 @@
             <Label Grid.Row="1" Grid.Column="0" FontSize="20" HorizontalAlignment="Right" Content="Red:"/>
             <Label Grid.Row="2" Grid.Column="0" FontSize="20" HorizontalAlignment="Right" Content="Green:"/>
             <Label Grid.Row="3" Grid.Column="0" FontSize="20" HorizontalAlignment="Right" Content="Blue:"/>
+            
             <Label Content="{Binding ElementName=Alpha, Path=Value}" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" FontSize="15" />
             <Label Content="{Binding ElementName=Red, Path=Value}" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" FontSize="15" />
             <Label Content="{Binding ElementName=Green, Path=Value}" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" FontSize="15" />
             <Label Content="{Binding ElementName=Blue, Path=Value}" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" FontSize="15" />
-            <Slider x:Name="Alpha" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" VerticalAlignment="Center" TickFrequency="1" IsSnapToTickEnabled="True" Maximum="100"/>
-            <Slider x:Name="Red" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" VerticalAlignment="Center" TickFrequency="1" IsSnapToTickEnabled="True" Maximum="255"/>
-            <Slider x:Name="Green" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" VerticalAlignment="Center" TickFrequency="1" IsSnapToTickEnabled="True" Maximum="255"/>
-            <Slider x:Name="Blue" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" VerticalAlignment="Center" TickFrequency="1" IsSnapToTickEnabled="True" Maximum="255"/>
-            <Border Grid.Column="4" Grid.Row="0" Grid.RowSpan="4" />
+            
+            <Slider x:Name="Alpha" Value="{Binding Alpha}" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" VerticalAlignment="Center" TickFrequency="1" IsSnapToTickEnabled="True" Maximum="100"/>
+            <Slider x:Name="Red" Value="{Binding Red}" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" VerticalAlignment="Center" TickFrequency="1" IsSnapToTickEnabled="True" Maximum="255"/>
+            <Slider x:Name="Green" Value="{Binding Green}" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" VerticalAlignment="Center" TickFrequency="1" IsSnapToTickEnabled="True" Maximum="255"/>
+            <Slider x:Name="Blue" Value="{Binding Blue}" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" VerticalAlignment="Center" TickFrequency="1" IsSnapToTickEnabled="True" Maximum="255"/>
+
+            <Border Grid.Column="4" Grid.Row="0" Grid.RowSpan="4">
+                <Border.Background>
+                    <SolidColorBrush Color="{Binding color}"/>
+                </Border.Background>
+            </Border>
+            
             <StackPanel Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button Width="80" Margin="5" Content="Add" FontSize="15"  />
                 <Button Width="80" Content="Delete" FontSize="15" Margin="5" />
