@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,33 +13,31 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace _03.Binding
+namespace _02_Controls
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        private ViewModel viewModel = new();
+        int i = 1;
+        const int max = 13; 
         public MainWindow()
         {
             InitializeComponent();
-            this.DataContext = viewModel;
         }
-    }
 
-    [PropertyChanged.AddINotifyPropertyChangedInterface]
-    public class ViewModel
-    {
-        public byte Alpha { get; set; }
-        public byte Red { get; set; }
-        public byte Green { get; set; }
-        public byte Blue { get; set; }
-
-        public Color color => Color.FromArgb(Alpha, Red, Green, Blue);
-
-    }
-
-
+        private void RepeatButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (i == max)
+            {
+                i = 0;
+            }
+            else
+            {
+                txtBox.Text = i.ToString();
+                i++;
+            }
+        }
     }
 }
