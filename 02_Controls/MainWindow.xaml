@@ -1,0 +1,57 @@
+﻿<Window x:Class="_02_Controls.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_02_Controls"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <DockPanel>
+        <!--<TextBlock TextAlignment="Center" FontSize="26">Welcome to Hotel California</TextBlock>-->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="120"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBox Background="Yellow" Grid.ColumnSpan="2" TextAlignment="Center" FontSize="30"  >Welcome to Hotel California</TextBox>
+            <Label Grid.Row="1" Content="Name:" FontSize="18" VerticalContentAlignment="Center" Background="Beige"></Label>
+            <TextBox Grid.Row="1" Grid.Column="1" VerticalContentAlignment="Center" Margin="4" FontSize="20"></TextBox>
+            <Label Grid.Row="2" Content="Surname:" FontSize="18" VerticalContentAlignment="Center" Background="Beige"></Label>
+            <TextBox Grid.Row="2"  HorizontalAlignment="Center" FontSize="20"></TextBox>
+            <Label Grid.Row="3" Content="Telephone:" FontSize="18" VerticalContentAlignment="Center" Background="Beige"></Label>
+            <TextBox Grid.Row="3" HorizontalAlignment="Center" FontSize="20"></TextBox>
+            <Expander HorizontalAlignment="Left" FontSize="18" Background="Beige" Grid.Row="4" ExpandDirection="Down" IsExpanded="True" Header="Categories" Width="800">
+                <StackPanel Margin="5">
+                    <RadioButton>Econom</RadioButton>
+                    <RadioButton Margin="0,5,0,0">Standart</RadioButton>
+                    <RadioButton Margin="0,5,0,0">Lux</RadioButton>
+                </StackPanel>
+            </Expander>
+            <StackPanel Grid.Row="5" Orientation="Horizontal" Background="Beige" >
+                <Label  Content="Guests Count :" FontSize="18" VerticalContentAlignment="Center" Background="Beige"></Label>
+                <RepeatButton Content="Add guest"  FontSize="16" Grid.Row="5" Width="100" Height="30" Click="RepeatButton_Click"></RepeatButton>
+                <TextBox Grid.Row="5" Name="txtBox" AcceptsReturn="True" VerticalAlignment="Center" FontSize="15"></TextBox>
+            </StackPanel>
+            <Calendar Grid.Column="1" Grid.Row="4" Grid.RowSpan="2">
+
+            </Calendar>
+            <!--<StackPanel Background="Beige" Grid.Row="1" Grid.Column="1" Grid.RowSpan="4">
+           
+            </StackPanel>-->
+
+        </Grid>
+
+
+
+
+    </DockPanel>
+</Window>
