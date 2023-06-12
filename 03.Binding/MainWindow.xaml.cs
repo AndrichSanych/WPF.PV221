@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
@@ -22,10 +23,26 @@ namespace _03.Binding
     public partial class MainWindow : Window
     {
         private ViewModel viewModel = new();
+
+        ObservableCollection<Color> colors = new ObservableCollection<Color>();
         public MainWindow()
         {
             InitializeComponent();
             this.DataContext = viewModel;
+            ColorCollection.ItemsSource = colors;
+        }
+
+        private void AddNewColorBtnClick(object sender, RoutedEventArgs e)
+        {
+            colors.Add(viewModel.SelectedColor);
+        }
+
+        private void RemoveColorBtnClick(object sender, RoutedEventArgs e)
+        {
+            if (ColorCollection.SelectedItem != null) 
+            {
+                colors.Remove(viewModel.SelectedColor);
+            }
         }
     }
 
@@ -37,10 +54,10 @@ namespace _03.Binding
         public byte Green { get; set; }
         public byte Blue { get; set; }
 
-        public Color color => Color.FromArgb(Alpha, Red, Green, Blue);
+        public Color SelectedColor => Color.FromArgb(Alpha, Red, Green, Blue);
 
     }
 
 
-    }
+    
 }

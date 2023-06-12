@@ -60,7 +60,7 @@
             
             <StackPanel Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button Width="80" Margin="5" Content="Add" FontSize="15" Click="AddNewColorBtnClick" />
-                <Button Width="80" Content="Delete" FontSize="15" Margin="5" Click="Button_Click" />
+                <Button Width="80" Content="Delete" FontSize="15" Margin="5" Click="RemoveColorBtnClick" />
             </StackPanel>
 
             <StackPanel Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="5" Margin="10">
