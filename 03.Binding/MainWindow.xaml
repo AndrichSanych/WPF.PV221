@@ -47,23 +47,28 @@
             <Label Content="{Binding ElementName=Green, Path=Value}" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" FontSize="15" />
             <Label Content="{Binding ElementName=Blue, Path=Value}" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" FontSize="15" />
             
-            <Slider x:Name="Alpha" Value="{Binding Alpha}" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" VerticalAlignment="Center" TickFrequency="1" IsSnapToTickEnabled="True" Maximum="100"/>
+            <Slider x:Name="Alpha" Value="{Binding Alpha}" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" VerticalAlignment="Center" TickFrequency="1" IsSnapToTickEnabled="True" Maximum="255"/>
             <Slider x:Name="Red" Value="{Binding Red}" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" VerticalAlignment="Center" TickFrequency="1" IsSnapToTickEnabled="True" Maximum="255"/>
             <Slider x:Name="Green" Value="{Binding Green}" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" VerticalAlignment="Center" TickFrequency="1" IsSnapToTickEnabled="True" Maximum="255"/>
             <Slider x:Name="Blue" Value="{Binding Blue}" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" VerticalAlignment="Center" TickFrequency="1" IsSnapToTickEnabled="True" Maximum="255"/>
 
             <Border Grid.Column="4" Grid.Row="0" Grid.RowSpan="4">
                 <Border.Background>
-                    <SolidColorBrush Color="{Binding color}"/>
+                    <SolidColorBrush Color="{Binding SelectedColor}"/>
                 </Border.Background>
             </Border>
             
             <StackPanel Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button Width="80" Margin="5" Content="Add" FontSize="15" />
-                <Button Width="80" Content="Delete" FontSize="15" Margin="5" />
+                <Button Width="80" Margin="5" Content="Add" FontSize="15" Click="AddNewColorBtnClick" />
+                <Button Width="80" Content="Delete" FontSize="15" Margin="5" Click="Button_Click" />
             </StackPanel>
 
+            <StackPanel Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="5" Margin="10">
+                <ListBox x:Name="ColorCollection"></ListBox>
+            </StackPanel>
         </Grid>
+            
+
 
 
     </DockPanel>
