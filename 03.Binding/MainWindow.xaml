@@ -51,7 +51,7 @@
             <Slider x:Name="Blue" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" VerticalAlignment="Center" TickFrequency="1" IsSnapToTickEnabled="True" Maximum="255"/>
             <Border Grid.Column="4" Grid.Row="0" Grid.RowSpan="4" />
             <StackPanel Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button Width="80" Margin="5" Content="Add" FontSize="15"  />
+                <Button Width="80" Margin="5" Content="Add" FontSize="15" />
                 <Button Width="80" Content="Delete" FontSize="15" Margin="5" />
             </StackPanel>
 
