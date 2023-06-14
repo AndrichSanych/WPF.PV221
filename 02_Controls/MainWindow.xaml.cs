@@ -35,9 +35,54 @@ namespace _02_Controls
             }
             else
             {
-                txtBox.Text = i.ToString();
+                CountVisitoursLabel.Content = i.ToString();
                 i++;
             }
+        }
+
+        private void Oreder_Click(object sender, RoutedEventArgs e)
+        {
+            if (Calendar.SelectedDates.Count == 0 || NameTextBox.Text == string.Empty || SurnameTextBox.Text == string.Empty || PhoneTextBox.Text == string.Empty || CountVisitoursLabel.Content.ToString() == "0" || AcceptCheckBox.IsChecked == false)
+            {
+                return;
+            }
+
+            string category = string.Empty;
+            if (economRadioButton.IsChecked == true)
+                category = economRadioButton.Content.ToString();
+            else if (standartRadioButton.IsChecked == true)
+                category = standartRadioButton.Content.ToString();
+            else if (luxRadioButton.IsChecked == true)
+                category = luxRadioButton.Content.ToString();
+            else
+                return;
+
+
+            MessageBox.Show($@"{NameTextBox.Text} {SurnameTextBox.Text}
+{PhoneTextBox.Text}
+Count guests : {CountVisitoursLabel.Content}
+Category: {category}
+From: {Calendar.SelectedDates.First()}
+To: {Calendar.SelectedDates.Last()}");
+        }
+
+        private void Cancel_Click(object sender, RoutedEventArgs e)
+        {
+            NameTextBox.Text = string.Empty;
+            SurnameTextBox.Text = string.Empty;
+            PhoneTextBox.Text = string.Empty;
+
+            i = 0;
+            CountVisitoursLabel.Content = "0";
+
+            economRadioButton.IsChecked = false;
+            standartRadioButton.IsChecked = false;
+            luxRadioButton.IsChecked = false;
+
+            AcceptCheckBox.IsChecked = false;
+
+            Calendar.SelectedDate = DateTime.Now;
+
         }
     }
 }

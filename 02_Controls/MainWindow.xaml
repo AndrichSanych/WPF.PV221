@@ -23,30 +23,31 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <TextBox Background="Yellow" Grid.ColumnSpan="2" TextAlignment="Center" FontSize="30"  >Welcome to Hotel California</TextBox>
-            <Label Grid.Row="1" Content="Name:" FontSize="18" VerticalContentAlignment="Center" Background="Beige"></Label>
-            <TextBox Grid.Row="1" Grid.Column="1" VerticalContentAlignment="Center" Margin="4" FontSize="20"></TextBox>
-            <Label Grid.Row="2" Content="Surname:" FontSize="18" VerticalContentAlignment="Center" Background="Beige"></Label>
-            <TextBox Grid.Row="2"  HorizontalAlignment="Center" FontSize="20"></TextBox>
-            <Label Grid.Row="3" Content="Telephone:" FontSize="18" VerticalContentAlignment="Center" Background="Beige"></Label>
-            <TextBox Grid.Row="3" HorizontalAlignment="Center" FontSize="20"></TextBox>
+            <Label Grid.Row="1" Content="Name:" FontSize="18" VerticalContentAlignment="Center" Target="{Binding ElementName=NameTextBox}" Background="Beige"></Label>
+            <TextBox x:Name="NameTextBox" Grid.Row="1" Grid.Column="1" VerticalContentAlignment="Center" Margin="4" FontSize="20"></TextBox>
+            <Label Grid.Row="2" Content="Surname:" FontSize="18" VerticalContentAlignment="Center" Target="{Binding ElementName=SurnameTextBox}" Background="Beige"></Label>
+            <TextBox x:Name="SurnameTextBox" Grid.Row="2"  Grid.Column="1" VerticalAlignment="Center" Margin="4" FontSize="20"></TextBox>
+            <Label Grid.Row="3" Content="Telephone:" FontSize="18" VerticalContentAlignment="Center"  Target="{Binding ElementName=PhoneTextBox}" Background="Beige"></Label>
+            <TextBox x:Name="PhoneTextBox" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Margin="4" FontSize="20"></TextBox>
             <Expander HorizontalAlignment="Left" FontSize="18" Background="Beige" Grid.Row="4" ExpandDirection="Down" IsExpanded="True" Header="Categories" Width="800">
                 <StackPanel Margin="5">
-                    <RadioButton>Econom</RadioButton>
-                    <RadioButton Margin="0,5,0,0">Standart</RadioButton>
-                    <RadioButton Margin="0,5,0,0">Lux</RadioButton>
+                    <RadioButton x:Name="economRadioButton">Econom</RadioButton>
+                    <RadioButton Margin="0,5,0,0" x:Name="standartRadioButton">Standart</RadioButton>
+                    <RadioButton Margin="0,5,0,0" x:Name="luxRadioButton">Lux</RadioButton>
                 </StackPanel>
             </Expander>
             <StackPanel Grid.Row="5" Orientation="Horizontal" Background="Beige" >
-                <Label  Content="Guests Count :" FontSize="18" VerticalContentAlignment="Center" Background="Beige"></Label>
+                <Label x:Name="CountVisitoursLabel" Content="0" FontSize="18" VerticalContentAlignment="Center" Target="{Binding ElementName=CountGuestsRepeatButton}" Background="Beige"></Label>
                 <RepeatButton Content="Add guest"  FontSize="16" Grid.Row="5" Width="100" Height="30" Click="RepeatButton_Click"></RepeatButton>
-                <TextBox Grid.Row="5" Name="txtBox" AcceptsReturn="True" VerticalAlignment="Center" FontSize="15"></TextBox>
+                <TextBox Grid.Row="5" AcceptsReturn="True" VerticalAlignment="Center" FontSize="15"></TextBox>
             </StackPanel>
-            <Calendar Grid.Column="1" Grid.Row="4" Grid.RowSpan="2">
-
+            <Calendar Name="Calendar" DisplayMode="Month" SelectionMode="SingleRange" Grid.Column="1" Grid.Row="4" Grid.RowSpan="2" >
             </Calendar>
-            <!--<StackPanel Background="Beige" Grid.Row="1" Grid.Column="1" Grid.RowSpan="4">
-           
-            </StackPanel>-->
+            <Label Grid.Row="6" FontSize="15" Target="{Binding ElementName=AcceptCheckBox}">Do you confirm all terms?</Label>
+            <CheckBox x:Name="AcceptCheckBox" Grid.Row="6" Margin="5" HorizontalAlignment="Center"/>
+            <Button Content="Order" Click="Oreder_Click"  Grid.Column="1" Grid.Row="6" Margin="5" HorizontalAlignment="Left" Width="150"></Button>
+            <Button Content="Cancel" Click="Cancel_Click" Grid.Column="1" Grid.Row="6" Margin="5" HorizontalAlignment="Right" Width="150"></Button>
+
 
         </Grid>
 
