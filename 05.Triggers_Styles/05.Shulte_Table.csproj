@@ -3,17 +3,9 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net7.0-windows</TargetFramework>
-    <RootNamespace>_09_shulte_table</RootNamespace>
+    <RootNamespace>_05.Triggers_Styles</RootNamespace>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Remove="Resources\eye.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="Resources\eye.png" />
-  </ItemGroup>
 
 </Project>
