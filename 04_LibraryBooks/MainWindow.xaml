@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_04_LibraryBooks"
+        d:DataContext="{d:DesignInstance Type=local:ViewModel}"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="850">
     <Grid>
@@ -22,7 +23,7 @@
         <Label Content="Details" FontSize="25" HorizontalAlignment="Center"/>
         <Label Content="Library" Grid.Row="0" Grid.Column="2" FontSize="25" HorizontalAlignment="Center"/>
         <StackPanel Orientation="Horizontal" Grid.Column="2" Grid.Row="1" Grid.RowSpan="4">
-            <ListBox Margin="5" x:Name="LibraryCollection"/>
+            <ListBox Margin="5" x:Name="LibraryCollection" ItemsSource="{Binding Path=Books}"/>
         </StackPanel>
         <Button Content="Previous" FontSize="20" Margin="10" Grid.Column="0" Grid.Row="4" HorizontalAlignment="Left" Width="auto"/>
         <Button Content="Next" FontSize="20" Margin="10" Grid.Column="0" Grid.Row="4" HorizontalAlignment="Right" Width="auto"/>
